@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Weather website</title>
+  <style>
+  ul.navbar {
+    margin-top: -1px;
+    margin-left: -6px;
+    list-style-type: none;
+    background-color: #067c89;
+    position: top;
+    display: flex; 
+  }
+  
+  ul.navbar li {
+    display: flex; 
+  }
+  
+  ul.navbar li a {
+    color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      ul.navbar li a:hover {
+        background-color: #1c128b;
+      }
+      #weather-info{
+        position: fixed;
+        text-align: center;
+        margin-left: 388px;
+        margin-top:109px ;
+      }
+      #wa1{
+        position: fixed;
+        margin-top: 63px;
+        margin-left: 377px;
+        font-size:xx-large larger;
+        font-weight: bolder;
+      }
+      
+  .box {
+      width: 300px;
+    height: 235px;
+    background-color: rgb(235 222 222);
+    margin: 10px;
+    border-radius: 11px;
+    }
+    #box1{ 
+      position: absolute; top: 160px; right: 700px
+      
+    }
+    #box2{
+      position: absolute; top: 160px; left: 100px
+    }
+     #box3{ 
+      position: absolute; bottom: 50px; left: 100px
+    }
+    #box4{
+      position: absolute; bottom: 50px; right: 700px
+     } 
+     .container1{
+      position: absolute;border-bottom: bottom;
+     }
+     body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .card mb-4 rounded-3 shadow-sm{
+      text-align: justify;
+      margin-left: 12px;
+    }
+    .card-body{
+      margin-left: 23px;
+    }
+
+    /* Footer styles */
+    .footer {
+      background-color: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+    .footer p {
+      margin: 0;
+      color: #888;
+    }
+
+    .footer a {
+      color: #888;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #333;
+    }
+    body {
+      background-image: url("image1.jpg");
+      background-size:cover;
+      background: position 23px;;
+      margin-top: 5px;
+    }
+    .image-container {
+      width: 487px;
+      height: 395px;
+      margin-top: 109px;
+      margin-left: 980PX;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+    }
+    #cityname4{
+      margin-top: 70px;
+      margin-left: 1000px;
+      font-family: cursive;
+      font-size: xx-large;
+      color:#120450;;
+      
+    }
+    
+  </style>
+  </head>
+
+
+
+  <body>
+    
+    <ul class="navbar">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="container">
+      <div class="box" id="box1">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Temperature</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><span id="temp2"></span><small class="text-body-secondary fw-light"><sup><span>&#8451;</span></sup></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Temperature is <span id="temp"></span></li>
+              <li>Min Temperature is is<span id="min_temp"></span></li>
+              <li>Max Temperature  is<span id="max_temp"></span></li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+          </div>
+        </div>
+      </div>
+      <div class="box" id="box2">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Humidity</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small class="text-body-secondary fw-light">%</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Cloud PCT is <span id="cloud_pct"></span></li>
+              <li>Feels like is <span id="feels_like"></span></li>
+              <li>Humidity is <span id="humidity"></span></li>
+              
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+          </div>
+        </div>
+      </div>
+      <div class="box" id="box3">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Sunrise & Sunset</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"></h1><span id="sunrise2"></span><h2><small class="text-body-secondary fw-light">00:00:00 UTC</small></h2>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Sunrise is <span id="sunrise"></span></li>
+              <li>Sunset is <span id="sunset"></span></li>
+              
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="box" id="box4">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Windspeed</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"></h1><span id="wind_speed2"></span><h2><small class="text-body-secondary fw-light">Km/Hr</small></h2>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>wind speed is <span id="wind_speed"></span></li>
+              <li>Wind Degrees is<span id="wind_degrees"></span></li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <h1 id="wa1">Weather Application</h1>
+    <div id="weather-info">
+      <input type="text" id="cityName1" placeholder="Enter city name">
+      <button onclick="getweather()" id="submit1">Get Weather</button>
+      <div id="result"></div>
+    </div>
+    <h3 id="cityname4"><u>Weather For <span id="cityName"></span></u></h3>
+    <footer class="footer">
+              <p>&copy; 2023 Weather Website. All rights reserved. | Designed by <a href="#">Shruti Sharma</a></p>
+            </footer>
+            <div class="image-container">
+              <img src="img2.jpg" alt="Image">
+            </div>
+        
+  <script src="script.js"></script>
+  
+</body>
+</html>
+
